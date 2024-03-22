@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./header";
 
 // const heading1 = React.createElement("h1", {}, "this is heading 1");
 const Heading1 = () => {
@@ -8,6 +9,10 @@ const Heading1 = () => {
 
 const heading2 = React.createElement("h2", {}, "this is heading 2");
 
+const Page = () => (
+  <Header/>
+)
+
 let root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Heading1 />);
+root.render(<Page />);
