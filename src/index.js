@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./header";
 import Dish from "./dish";
 import About from "./about.js";
+import Menu from "./menu.js";
 
 // const heading1 = React.createElement("h1", {}, "this is heading 1");
 const Heading1 = () => {
@@ -12,13 +13,12 @@ const Heading1 = () => {
 const heading2 = React.createElement("h2", {}, "this is heading 2");
 
 const Page = () => (
-<>
-<Header />
-<Dish/>
-<About />
-
-</>
-
+  <>
+    <Header />
+    <Dish />
+    <About />
+    <Menu />
+  </>
 );
 
 let root = ReactDOM.createRoot(document.getElementById("root"));

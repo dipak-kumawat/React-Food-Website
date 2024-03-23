@@ -3,19 +3,19 @@ const Search =()=>(
     
         <form action="" id="search-form">
         <input type="search" placeholder="Search here...." name="" id="search-box"/>
-        <label for="search-box" class="fas fa-search"></label>
-        <i class="fas fa-times" id="close"></i>
+        <label for="search-box" className="fas fa-search"></label>
+        <i className="fas fa-times" id="close"></i>
         </form>
     
 );
 const Header = () => (
   <header>
-    <a href="#" class="logo">
-      <i class="fa-solid fa-utensils"></i>FoodHub
+    <a href="#" className="logo">
+      <i className="fa-solid fa-utensils"></i>FoodHub
     </a>
 
-    <div class="navbar">
-      <a class="active" href="#home">
+    <div className="navbar">
+      <a className="active" href="#home">
         home
       </a>
       <a href="#dishes">dishes</a>
@@ -26,11 +26,11 @@ const Header = () => (
       <a href="/feedback/feedbackform1.html">Feedback</a>
     </div>
 
-    <div class="icons">
-      <i class="fas fa-bars" id="menu-bars"></i>
-      <i class="fas fa-search" id="search-icon"></i>
-      <a href="#" class="fas fa-heart"></a>
-      <a href="#" class="fas fa-shopping-cart" id="bars"></a>
+    <div className="icons">
+      <i className="fas fa-bars" id="menu-bars"></i>
+      <i className="fas fa-search" id="search-icon"></i>
+      <a href="#" className="fas fa-heart"></a>
+      <a href="#" className="fas fa-shopping-cart" id="bars"></a>
     </div>
   </header>
 );
