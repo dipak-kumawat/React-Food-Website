@@ -468,6 +468,7 @@ const restaurant = [
     },
   },
 ];
+
 const Body = ({ image, name, costForTwo }) => {
   return (
     <div className="box">

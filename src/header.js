@@ -1,13 +1,45 @@
+import { useState } from "react";
 
-const Search =()=>(
-    
-        <form action="" id="search-form">
-        <input type="search" placeholder="Search here...." name="" id="search-box"/>
-        <label for="search-box" className="fas fa-search"></label>
-        <i className="fas fa-times" id="close"></i>
-        </form>
-    
-);
+function SearchBar({ onSearch }) {
+  const [query, setQuery] = useState("");
+
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+    // Pass the query to the parent component or perform any other action
+    onSearch(event.target.value);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        className="fas fa-search"
+        id="search-icon"
+        placeholder="Search..."
+        value={query}
+        onChange={handleInputChange}
+      />
+    </div>
+  );
+}
+
+function Search() {
+  const handleSearch = (query) => {
+    // Perform search or filtering based on the query
+    // console.log("Searching for:", query);
+    // Example: You can update state or perform any other action here
+  };
+  console.log(handleSearch);
+
+  return (
+    <div>
+      <h1>Search Example</h1>
+      <SearchBar onSearch={handleSearch} />
+      {/* Other components or content */}
+    </div>
+  );
+}
+
 const Header = () => (
   <header>
     <a href="#" className="logo">
@@ -26,12 +58,13 @@ const Header = () => (
       <a href="/feedback/feedbackform1.html">Feedback</a>
     </div>
 
-    <div className="icons">
+    {/* <div className="icons">
       <i className="fas fa-bars" id="menu-bars"></i>
       <i className="fas fa-search" id="search-icon"></i>
       <a href="#" className="fas fa-heart"></a>
       <a href="#" className="fas fa-shopping-cart" id="bars"></a>
-    </div>
+    </div> */}
+    <Search />
   </header>
 );
 
