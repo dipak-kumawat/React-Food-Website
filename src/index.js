@@ -4,13 +4,13 @@ import Header from "./header";
 import Dish from "./dish";
 import About from "./about.js";
 import Error from "./error.js";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 
 const Page = () => (
   <>
     <Header />
-    <Dish />
+    <Outlet />
     <About />
   </>
 );
@@ -19,13 +19,23 @@ const appRounter = createBrowserRouter([
   {
     path:"/",
     element: <Page/>,
-    errorElement: <Error/>
+    errorElement: <Error/>,
+    children: [
+      {
+        path: "/",
+        element: <Dish/>
+      },
+      {
+        path: "/dish",
+        element: <Dish/>
+      },
+      {
+        path: "/about",
+        element: <About/>
+      }]
+
   },
-  {
-    path: "/about",
-    element: <About/>
-  }]
-)
+])
 
 let root = ReactDOM.createRoot(document.getElementById("root"));
 

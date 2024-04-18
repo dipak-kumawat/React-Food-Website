@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState("");
@@ -47,11 +48,11 @@ const Header = () => (
     </a>
 
     <div className="navbar">
-      <a className="active" href="#home">
+      <Link className="active" to="/">
         home
-      </a>
+      </Link>
       <a href="#dishes">dishes</a>
-      <a href="#about">about</a>
+      <Link to='/about'>about</Link>
       <a href="#menu">menu</a>
       <a href="#review">review</a>
       <a href="#order">order</a>
