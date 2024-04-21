@@ -1,4 +1,4 @@
-const Menu = (
+const Menu = ()=> {return(
   <section className="menu" id="menu">
     <h3 className="sub-heading">our menu</h3>
     <h1 className="heading">Today's speciality</h1>
@@ -225,6 +225,6 @@ const Menu = (
       </div>
     </div>
   </section>
-);
+)};
 
 export default Menu;
