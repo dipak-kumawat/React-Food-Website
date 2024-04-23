@@ -1,9 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { restaurantList } from "./api.js";
+
+function filterdata(searchText, restaurant) {
+  const filteredData = restaurant.filter((restaurantItem) =>
+    restaurantItem.info.name.includes(searchText)
+  );
+
+  return filteredData;
+}
 
 const Search = () => {
   const [restaurant, setRestaurant] = useState(restaurantList);
-  const [searchText, setSearchText] = useState("kfc");
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = () => {
+    const filteredData = filterdata(searchText, restaurant);
+    setRestaurant(filteredData);
+  };
+
   return (
     <div>
       <input
@@ -15,17 +30,14 @@ const Search = () => {
           setSearchText(e.target.value);
         }}
       />
-      <h1>{searchClicked}</h1>
-      <button
-        className="btn"
-        onClick={() => {
-          filterdata();
-        }}>
+      <h1>{searchText}</h1> {/* Display search text */}
+      <button className="btn" onClick={handleSearch}>
         Search
       </button>
     </div>
   );
 };
+
 
 const Header = () => (
   <header>
