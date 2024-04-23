@@ -38,7 +38,6 @@ const Search = () => {
   );
 };
 
-
 const Header = () => (
   <header>
     <a href="#" className="logo">
@@ -49,9 +48,9 @@ const Header = () => (
       <Link className="active" to="/">
         home
       </Link>
-      <a href="#dishes">dishes</a>
+      <Link to="/dishe">dishes</Link>
       <Link to="/about">about</Link>
-      <a href="#menu">menu</a>
+      <Link to="/menu">menu</Link>
       <a href="#review">review</a>
       <a href="#order">order</a>
       <a href="/feedback/feedbackform1.html">Feedback</a>
