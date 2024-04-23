@@ -1,45 +1,31 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function SearchBar({ onSearch }) {
-  const [query, setQuery] = useState("");
-
-  const handleInputChange = (event) => {
-    setQuery(event.target.value);
-    // Pass the query to the parent component or perform any other action
-    onSearch(event.target.value);
-  };
-
+const Search = () => {
+  const [restaurant, setRestaurant] = useState(restaurantList);
+  const [searchText, setSearchText] = useState("kfc");
   return (
     <div>
       <input
         type="text"
-        className="fas fa-search"
         id="search-icon"
         placeholder="Search..."
-        value={query}
-        onChange={handleInputChange}
+        value={searchText}
+        onChange={(e) => {
+          setSearchText(e.target.value);
+        }}
       />
+      <h1>{searchClicked}</h1>
+      <button
+        className="btn"
+        onClick={() => {
+          filterdata();
+        }}>
+        Search
+      </button>
     </div>
   );
-}
-
-function Search() {
-  const handleSearch = (query) => {
-    // Perform search or filtering based on the query
-    // console.log("Searching for:", query);
-    // Example: You can update state or perform any other action here
-  };
-  console.log(handleSearch);
-
-  return (
-    <div>
-      <h1>Search Example</h1>
-      <SearchBar onSearch={handleSearch} />
-      {/* Other components or content */}
-    </div>
-  );
-}
+};
 
 const Header = () => (
   <header>
@@ -52,19 +38,13 @@ const Header = () => (
         home
       </Link>
       <a href="#dishes">dishes</a>
-      <Link to='/about'>about</Link>
+      <Link to="/about">about</Link>
       <a href="#menu">menu</a>
       <a href="#review">review</a>
       <a href="#order">order</a>
       <a href="/feedback/feedbackform1.html">Feedback</a>
     </div>
 
-    {/* <div className="icons">
-      <i className="fas fa-bars" id="menu-bars"></i>
-      <i className="fas fa-search" id="search-icon"></i>
-      <a href="#" className="fas fa-heart"></a>
-      <a href="#" className="fas fa-shopping-cart" id="bars"></a>
-    </div> */}
     <Search />
   </header>
 );

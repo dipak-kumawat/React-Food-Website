@@ -485,23 +485,6 @@ const Body = ({ image, name, costForTwo }) => {
   );
 };
 
-// const Dish = () => {
-//   return (
-//     <section className="dishes" id="dishes">
-//       <h3 className="sub-heading">Our dishes</h3>
-//       <h1 className="heading">Popular dishes</h1>
-
-//       <div className="box-container">
-//         <Body {...restaurant[1].info}/>
-//         <Body />
-//         <Body />
-//         <Body />
-//         <Body />
-//         <Body />
-//       </div>
-//     </section>
-//   );
-// };
 const Dish = () => {
   return (
     <section className="dishes" id="dishes">
